@@ -1,0 +1,75 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixins';
+
+header {
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+
+        .linha {
+            border-top: 1px solid black;
+            width: 80%;
+        }
+
+        ul {
+            display: inline-flex;
+            gap: 2rem;
+
+            li {
+                list-style-type: none;
+            }
+
+            a {
+                text-decoration: none;
+
+                @include mixins.ff-fs-color(variaveis.$ft-textos,variaveis.$cor-primaria,1rem);
+                font-weight: 500;
+            }
+        }
+    }
+
+    #home {
+        max-width: 1040px;
+        display: flex;
+        align-items: center;
+        @include mixins.margem-central(80%);
+        justify-content: space-between;
+
+        .textos-home {
+            max-width: 464px;
+
+            h1 {
+                @include mixins.ff-fs-color(variaveis.$ft-textos,variaveis.$cor-primaria,42px);
+
+                margin-bottom: 2rem;
+
+                span {
+                    color: variaveis.$cor-secundaria;
+                }
+            }
+
+            .btn-main {
+                background-color: variaveis.$cor-secundaria;
+                @include mixins.ff-fs-color(variaveis.$ft-textos,white,22px);
+                width: 280px;
+                height: 66px;
+                border-radius: 40px;
+                border: none;
+                font-weight: 600;
+            }
+        }
+
+        .img-home {
+            max-width: 474px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
